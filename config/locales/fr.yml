@@ -1,0 +1,53 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+fr:
+  activerecord:
+    attributes:
+      spree/blog_entry:
+        title: Titre
+        body: Corps
+        summary: Sommaire
+        permalink: Permalien
+        published_at: Publié le
+        visible: Visible
+        author_id: Auteur
+        tag_list: Tags
+        category_list: Catégories
+      spree/user:
+        nickname: Surnom
+        website_url: Lien site internet
+        google_plus_url: Lien Google Plus
+        bio_info: Biographie
+  spree:
+    title: Titre
+    body: Corps
+    summary: Sommaire
+    permalink: Permalien
+    published_at: Publié le
+    visible: Visible
+    author_id: Auteur
+    tag_list: Tags
+    category_list: Catégories
+    nickname: Surnom
+    website_url: Lien site internet
+    google_plus_url: Lien Google Plus
+    bio_info: Biographie
+    blog: "Blogue"
+    blog_entries: "Billets"
+    new_blog_entry: "Nouveau billet"
+    no_blog_entries: "Aucun billet trouvéNo blog entries found."
+    blog_entry_featured_image: Image de présentation
+    posted_on: Publié le
+    posted_in: Publié dans
+    tagged: Taggé
+    by: par
+    blog_read_more: Lire la suite
+    blog_archive: Archive
+    blog_tag: Tag
+    blog_category: Categorie
+    blog_author: Auteur
+    editing: Édition
+  time:
+    formats:
+      blog_date: "%e %b %Y"
