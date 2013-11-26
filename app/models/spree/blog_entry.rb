@@ -1,14 +1,13 @@
 require 'acts-as-taggable-on'
 
 class Spree::BlogEntry < ActiveRecord::Base
-  attr_accessible :title, :body, :tag_list, :visible, :published_at, :summary, :permalink, :author_id, :category_list, :blog_entry_image, :blog_entry_image_attributes
   acts_as_taggable_on :tags, :categories
   before_save :create_permalink
   before_save :set_published_at
   validates_presence_of :title
   validates_presence_of :body
 
-  translates :title, :body, :summary, :permalink,
+  translates :title, :body, :summary,
              :fallbacks_for_empty_translations => true
   include SpreeI18n::Translatable
 
