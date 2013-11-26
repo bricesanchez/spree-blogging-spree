@@ -8,6 +8,10 @@ class Spree::BlogEntry < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :body
 
+  translates :title, :body, :summary, :permalink,
+             :fallbacks_for_empty_translations => true
+  include SpreeI18n::Translatable
+
   default_scope { order("published_at DESC") }
   scope :visible, -> { where :visible => true }
   scope :recent, lambda{|max=5| visible.limit(max) }
@@ -38,7 +42,7 @@ class Spree::BlogEntry < ActiveRecord::Base
 
     time = date.to_time.in_time_zone
     where(:published_at => (time.send("beginning_of_#{period}")..time.send("end_of_#{period}")) )
-  end 
+  end
 
   def self.by_tag(tag_name)
     tagged_with(tag_name, :on => :tags)
@@ -88,4 +92,4 @@ class Spree::BlogEntry < ActiveRecord::Base
     errors.add(:body, "can't be blank") if body =~ /^<br>$/
   end
 
-end 
+end

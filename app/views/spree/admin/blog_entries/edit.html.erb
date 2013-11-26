@@ -10,5 +10,12 @@
 
 <%= form_for [:admin, @blog_entry] do |f| %>
   <%= render :partial => f %>
+
+  <% if @blog_entry.id %>
+    <%= link_to Spree.t("i18n.translations"), admin_translations_path('blog_entry', @blog_entry.id),
+    class: 'button icon_link with-tip icon-flag',
+    style: 'padding-top: 8px; margin-top: 8px; display: inline-block;' %>
+  <% end %>
+
   <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
 <% end %>
